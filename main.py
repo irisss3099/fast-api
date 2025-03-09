@@ -4,18 +4,19 @@ import random
 app = FastAPI()
 
 side_hustles = [
-    "Freelancing - start offering your skills online!!",
-    "Dropshipping - sell without handling inventory!!",
-    "Stock Market - invest and watch your money grow!!",
-    "Affilate Marketing - earn by promoting products!!",
-    "Crypto Trading - buy and sell digital assets!!",
-    "Online Courses - share your knowledge and earn!!",
-    "Print-on-Demand - sell custom designed products!!",
-    "Blogging - create content and earn through ads and sponsorships!!",
-    "Youtube Channel - monetize vedios through ads and sponsorships!!",
-    "Social Media Management - manage accounts for brands and influencers!!",
-    "App Development - create mobile or web applications for businesses!!",
+    "Freelancing - Start offering your skills online!",
+    "Dropshipping - Sell without handling inventory!",
+    "Stock Market - Invest and watch your money grow!",
+    "Affiliate Marketing - Earn by promoting products!",
+    "Crypto Trading - Buy and sell digital assets!",
+    "Online Courses - Share your knowledge and earn!",
+    "Print-on-Demand - Sell custom-designed products!",
+    "Blogging - Create content and earn through ads and sponsorships!",
+    "YouTube Channel - Monetize videos through ads and sponsorships!",
+    "Social Media Management - Manage accounts for brands and influencers!",
+    "App Development - Create mobile or web applications for businesses!",
 ]
+
 
 money_quotes = [
     "The way to get started is to quit talking and begin doing. – Walt Disney",
@@ -35,17 +36,14 @@ money_quotes = [
     "Money grows on the tree of persistence. – Japanese Proverb",
 ]
 
+
 @app.get("/side_hustles")
-def get_side_hustles(apikey: str):
+def get_side_hustles():
     """Returns a random side hustle idea"""
-    if apikey != "1234567890":
-        return{"error : invalid API key..!!"}
-    return {"side_hustles": random.choice(side_hustles)}
+    return {"side_hustle": random.choice(side_hustles)}
 
 
 @app.get("/money_quotes")
-def get_money_quotes(apikey: str):
+def get_money_quotes():
     """Returns a random money quote"""
-    if apikey != "1234567890":
-        return{"error : invalid API key..!!"}
-    return {"money_quotes": random.choice(money_quotes)}
+    return {"money_quote": random.choice(money_quotes)}
